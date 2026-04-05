@@ -19,9 +19,10 @@ const appsInProd = [
   },
   {
     name: "New Me By Believe",
-    fr: "Application de développement personnel multi-plateforme",
-    en: "Cross-platform personal development app",
+    fr: "Organisez votre vie avec la méthode GTD — Web, iOS & Android",
+    en: "Organize your life with the GTD method — Web, iOS & Android",
     tech: ["Expo", "React Native", "Firebase"],
+    url: "/newme",
     color: "from-fuchsia-500 to-purple-500",
     emoji: "🦋",
   },
@@ -169,8 +170,7 @@ function AppCard({ app }: { app: App }) {
         {app.url && (
           <a
             href={app.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(app.url.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
             className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
           >
             View / Voir &rarr;
